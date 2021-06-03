@@ -60,7 +60,7 @@ The final average-reward approximate by each method is:
 
 |      Method     | Average reward, ρ | \|ρ*-ρ\| |
 |:---------------:|:-----------------:|:--------:|
-| Optimal Nudging |       3.308       |  -0.028  |
+| Optimal Nudging |       3.308       |   0.028  |
 | R-learning      |       3.247       |   0.032  |
 | SMART           |       3.116       |   0.163  |
 | R-SMART         |       3.169       |   0.110  |
@@ -134,9 +134,9 @@ The final average-reward approximate by each method is:
 
 |      Method     | Average reward, ρ  |  \|ρ*-ρ\|  |
 |:---------------:|:------------------:|:----------:|
-| Optimal Nudging |       0.4281       |  -0.00044  |
+| Optimal Nudging |       0.4281       |   0.00044  |
 | R-learning      |       0.4934       |   0.06477  |
-| R-SMART         |       0.3438       |  -0.08476  |
+| R-SMART         |       0.3438       |   0.08476  |
 
 
 ## Freeway

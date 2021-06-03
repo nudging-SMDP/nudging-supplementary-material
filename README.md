@@ -3,7 +3,7 @@
 This repository is part of the supplemental material for the paper "A black-box approach for average-reward and semi-Markov decision processes". 
 
 ## Access control queuing task
-In this experiemnt, we have n=10 servers who gets free with probability 0.06 and customers of priorities {8, 4, 2, 1} with arrival probabilities of {0.4, 0.2, 0.2, 0.2} respectively. The customer at the head of the queue is either assigned to a free server, with a pay-off equal to the customer’s priority or rejected with zero pay-off. Making `accept' the only action for states with priority 8 and any number of free servers, the state with no free servers is recurrent and the unichain condition holds.
+In this experiment, we have n=10 servers who gets free with probability 0.06 and customers of priorities {8, 4, 2, 1} with arrival probabilities of {0.4, 0.2, 0.2, 0.2} respectively. The customer at the head of the queue is either assigned to a free server, with a pay-off equal to the customer’s priority or rejected with zero pay-off. Making 'accept' the only action for states with priority 8 and any number of free servers, the state with no free servers is recurrent and the unichain condition holds.
 
 **State:** number of free servers and customer's priorities.\
 **Actions:** accept or reject a customer. For customers with priority 8, the only available action is to accept them.\
@@ -69,7 +69,7 @@ The final average-reward approximate by each method is:
 
 
 ## RiverSwim
-This experiment similar to the one presented by Strehl and Littman [2008]. The riverswim consists of six states and there are two possible actions: swim left (with the current) or right (against the current of the river). If the agent swims right, there is a probability of 0.6 for the agent to remain in the same state, 0.35 for moving to the right state and 0.05 for moving the left state. However, if the agent swims left, the agent always succed in moving to the left, until the leftmost state which yields a small reward of 0,01. The agent receives a reward of 1,0 for swimming upstream and reaching the rightmost state.
+This experiment similar to the one presented by Strehl and Littman [2008]. The riverswim consists of six states and there are two possible actions: swim left (with the current) or right (against the current of the river). If the agent swims right, there is a probability of 0.6 for the agent to remain in the same state, 0.35 for moving to the right state, and 0.05 for moving to the left state. However, if the agent swims left, the agent always succeed in moving to the left, until the leftmost state which yields a small reward of 0,01. The agent receives a reward of 1,0 for swimming upstream and reaching the rightmost state.
 
 **State**: <img src="https://latex.codecogs.com/svg.latex?\mathcal{S}=\{1,2,3,4,5,6\}" title="\mathcal{S}=\{1,2,3,4,5,6\}" >\
 **Actions**: swim left (0), swim right (1)\
@@ -78,7 +78,7 @@ This experiment similar to the one presented by Strehl and Littman [2008]. The r
 
 <img src="/RiverSwim/riverswim.png" alt="RiverSwim MDP" width="600"/>
 
-Evaluating over all policies, we know that the optimal policy is swimming right in every state, with an average reward of <img src="https://latex.codecogs.com/svg.latex?\rho^{*}\approx&space;3.28" title="\rho^{*}\approx 0.428" > 
+Evaluating over all policies, we know that the optimal policy is swimming right in every state, with an average reward of <img src="https://latex.codecogs.com/svg.latex?\rho^{*}\approx&space;0.428" title="\rho^{*}\approx 0.428" > 
 
 
 ### Requirements
@@ -142,8 +142,8 @@ The final average-reward approximate by each method is:
 ## Freeway
 We use this environment from [OpenAI gym](https://gym.openai.com/envs/Freeway-v0/) to test nudging with a black box with function approximation (DQN implementation from [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/modules/dqn.html)). The task is to run across a ten-lane highway with traffic.
 
-For solving an average reward problem, having a recurrent state and to generate the Bertsekas Split,
-we modified the enviroment in the following way:
+For solving an average reward problem, having a recurrent state, and to generate the Bertsekas Split,
+we modified the environment in the following way:
 
 **State:** RGB image of shape (210, 160, 3)  
 
@@ -173,7 +173,7 @@ Create a conda environment with the following package:
 python = 3.6\
 numpy\
 matplotlib\
-ternsorflow = 1.15\
+tensorflow = 1.15\
 pandas\
 tqdm\
 gym\
@@ -237,7 +237,7 @@ Results for optimal and α- nudging, deep R-learning, and discounted DQN in Free
 <img src="/Freeway/table_freeway.png" alt="" width="600"/>
 
 ## Microgrid
-We designed a task to test nudging in a general semi-Markov problem with non-unitary costs. The designed microgrid environment has distributed generation (DG), such as gas-fired power plant, solar and wind renewable energy sources, and energy storage device. Our microgrid is connected to the  electric power system and the goal is to find the average-reward for one day operation. The controller agent receives a reward based on the amount of energy from DGs used to supply the demand and if it was able to sell energy to the main grid. The operating cost includes the main grid backup and the generation cost of the gas-fired power plant (all in USD). Also, the agent has information in a continuous state space about the hour, day, month, if the gas plant is enable and its cost of generation and the battery charge percentage. Its action space is continuous as well, controlling the amount of charge/discharge of the battery, activate the gas plant and set its generation between 5-8 MW.
+We designed a task to test nudging in a general semi-Markov problem with non-unitary costs. The designed microgrid environment has distributed generation (DG), such as gas-fired power plant, solar and wind renewable energy sources, and energy storage devices. Our microgrid is connected to the  electric power system and the goal is to find the average-reward for one-day operation. The controller agent receives a reward based on the amount of energy from DGs used to supply the demand and if it was able to sell energy to the main grid. The operating cost includes the main grid backup and the generation cost of the gas-fired power plant (all in USD). Also, the agent has information in a continuous state space about the hour, day, month, if the gas plant is enabled and its cost of generation, and the battery charge percentage. Its action space is continuous as well, controlling the amount of charge/discharge of the battery, activate the gas plant and set its generation between 5-8 MWh.
 
 
 ### Continuous state space
@@ -277,7 +277,7 @@ Create a conda environment with the following package:
 python = 3.6\
 numpy\
 matplotlib\
-ternsorflow = 1.15\
+tensorflow = 1.15\
 pandas\
 tqdm\
 gym\

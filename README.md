@@ -54,7 +54,7 @@ To plot results and compare them with the baselines from state-of-the-art averag
 python plot_results.py
 ```
 
-<img src="/AccessQueues/data/results.png" alt="Comparison of optimal nudging with state-of-the-art average-reward methods for the Access Control Queuing experiment" width="700"/>
+<img src="/AccessQueues/data/results2.png" alt="Comparison of optimal nudging with state-of-the-art average-reward methods for the Access Control Queuing experiment" width="700"/>
 
 The final average-reward approximate by each method is:
 
